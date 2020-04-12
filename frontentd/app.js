@@ -1,9 +1,13 @@
  class Channel extends React.Component{
+    onClick(){
+        console.log("hello", this.props.name);
+    }
+
      render(){
          return(
-             <li>Channel name</li>
+             <li onClick={this.onClick.bind(this)}>{ this.props.name }</li>
          )
      }
  }
 
- ReactDOM.render(<Channel></Channel> ,document.getElementById('app'));
+ ReactDOM.render(<Channel name="Hardware Support"  />,document.getElementById('app'));
